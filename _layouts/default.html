@@ -6,30 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Devtoledo.github.com : " />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap.min.css">
-    <title>Devtoledo.github.com</title>
+    <title>DevToledo</title>
   </head>
 
   <body>
     <div class="container">
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/DevToledo">View on GitHub</a>
+      <div class="row">
+        <h1>DevToledo</h1>
+        <div class="span4">
+          <h3>Activity</h3>
+          {% for post in site.posts %}
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          {% endfor %} 
 
-          <h1 id="project_title">Devtoledo.github.com</h1>
-          <h2 id="project_tagline"></h2>
-        </header>
-    </div>
+          <h3>Links</h3>
+          <ul>
+            <li><a href="https://twitter.com/devtoledo">@DevToledo</a></li>
+            <li><a href="https://twitter.com/openhacktoledo">@OpenHackToledo</a></li>
+            <li><a href="https://twitter.com/seedcowork">@SeedCowork</a></li>
+          </ul>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-      {% for post in site.posts %}
-        {{ post.content }}
-      {% endfor %} 
-      </section>
-    </div>
+          <h3>Speakers</h3>
+          <ul>
+            <li><a href="http://scottradcliff.com">Scott Radcliff</a></li>
+            <li><a href="http://brilliantfantastic.com">Jamie Wright</a></li>
+          </ul>
+        </div>
 
-    </div>
+        <div class="span8">
+          {% assign first_post = site.posts.first %}
+          <h1>{{first_post.title}}</h1>
+          <p>Added on: {{ first_post.date | date: "%A, %b %d, %Y") }}</p>
+          {{ first_post.content }}
+        </div>
+      </div>
   </body>
 </html>
