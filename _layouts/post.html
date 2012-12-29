@@ -1,44 +1,29 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Devtoledo.github.com : " />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
-
-    <title>Devtoledo.github.com</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/theme.css">
+    <title>DevToledo</title>
   </head>
 
-  <body>
+ <body>
+    <div class="container">
+      <div class="row">
+        <h1>DevToledo</h1>
+        <div class="span4 post-links">
+          {% include sidebar.html %}
+        </div>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/DevToledo">View on GitHub</a>
-
-          <h1 id="project_title">Devtoledo.github.com</h1>
-          <h2 id="project_tagline"></h2>
-
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-      {{ content }}
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+        <div class="span7">
+          <h1>{{page.title}}</h1>
+          <p>Added on: {{ page.date | date: "%A, %b %d, %Y") }}</p>
+          {{ content }}
+        </div>
+      </div>
   </body>
 </html>
+

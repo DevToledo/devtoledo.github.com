@@ -1,10 +1,8 @@
-
 ul {
   li {
     list-style-type: none;
   }
 }
-
 
 a {
   color: #6ABAFF;
@@ -19,6 +17,12 @@ body {
   background: white;
   margin: 0 auto;
   padding: 0 20px;
+  min-height: 600px;
 }
 
+.post-links {
+  a {
+    display: block;
+  }
+}
 

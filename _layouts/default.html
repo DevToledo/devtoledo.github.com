@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Devtoledo.github.com : " />
+    <meta name="description" content="Agnostic Developer User Group in Toledo Ohio" />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/theme.css">
     <title>DevToledo</title>
@@ -14,27 +14,11 @@
     <div class="container">
       <div class="row">
         <h1>DevToledo</h1>
-        <div class="span4">
-          <h3>Activity</h3>
-          {% for post in site.posts %}
-          <a href="{{ post.url }}">{{ post.title }}</a>
-          {% endfor %} 
-
-          <h3>Links</h3>
-          <ul>
-            <li><a href="https://twitter.com/devtoledo">@DevToledo</a></li>
-            <li><a href="https://twitter.com/openhacktoledo">@OpenHackToledo</a></li>
-            <li><a href="https://twitter.com/seedcowork">@SeedCowork</a></li>
-          </ul>
-
-          <h3>Speakers</h3>
-          <ul>
-            <li><a href="http://scottradcliff.com">Scott Radcliff</a></li>
-            <li><a href="http://brilliantfantastic.com">Jamie Wright</a></li>
-          </ul>
+        <div class="span4 post-links">
+          {% include sidebar.html %}
         </div>
 
-        <div class="span8">
+        <div class="span7">
           {% assign first_post = site.posts.first %}
           <h1>{{first_post.title}}</h1>
           <p>Added on: {{ first_post.date | date: "%A, %b %d, %Y") }}</p>
